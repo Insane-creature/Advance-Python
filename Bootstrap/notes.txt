@@ -1,0 +1,25 @@
+# Putting this and adding it in div class allows flexibility for elements.
+<style>
+        .container-fluid{
+            background-color: grey;
+            padding: 0 90px;
+        }
+</style>
+
+# Headings
+<h1>
+<h1>
+<h1>....<h6>
+
+# <mark> highlights the text or something
+
+# Underlines the text
+<abbr title = "Explaination">Underline</abbr>
+
+# <blockquote> adds block or quoted line.
+# <blockquote class = "blockquote-reverse">
+# <footer> adds -dashed line
+
+# <code> adds text in snapppet form
+
+# <kbd> adds keyboard input
