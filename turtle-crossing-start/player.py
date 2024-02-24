@@ -9,23 +9,25 @@ class Player(Turtle):
     def __init__(self):
         super().__init__()
         self.shape("turtle")
-        self.color("black")        
+        self.color("black")  
+        # self.settiltangle(90)      
         self.penup()
         self.go_to_start()
         self.setheading(90)
+
         
         
     def go_up(self):
         self.forward(MOVE_DISTANCE)
 
     def go_left(self):
-        self.left(MOVE_DISTANCE)
+        self.forward(MOVE_DISTANCE)
     
     def go_right(self):
         self.right(MOVE_DISTANCE)
 
-    def go_down(self):
-        self.down(MOVE_DISTANCE)
+    # def go_down(self):
+    #     self.down(MOVE_DISTANCE)
 
 
     def go_to_start(self):

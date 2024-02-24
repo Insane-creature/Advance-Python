@@ -17,7 +17,7 @@ screen.listen()
 screen.onkey(player.go_up, "Up")
 screen.onkey(player.go_left, "Left")
 screen.onkey(player.go_right, "Right")
-screen.onkey(player.go_down, "Down")
+# screen.onkey(player.go_down, "Down")
 
 
 game_is_on = True
