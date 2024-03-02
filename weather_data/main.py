@@ -15,7 +15,17 @@
 import pandas
 
 data = pandas.read_csv("weather_data.csv")
-# print(data["temp"])
-print(type(data)) #  #<class 'pandas.core.series.Dataframe'>
-# Dataframe and Series are two primitive datatypes of PANDAS
-print(type(data["temp"]))   #<class 'pandas.core.series.Series'>
+
+# print(type(data)) #  #<class 'pandas.core.series.Dataframe'>
+# print(type(data["temp"]))   #<class 'pandas.core.series.Series'>
+
+df = data.to_dict()
+# print(df)
+
+# Finding the average
+tl = data["temp"].to_list()
+average = sum(data["temp"])/len(tl)
+# print(average)
+
+# Using pandas
+print(data["temp"].mean())
