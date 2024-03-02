@@ -22,10 +22,13 @@ data = pandas.read_csv("weather_data.csv")
 df = data.to_dict()
 # print(df)
 
-# Finding the average
 tl = data["temp"].to_list()
 average = sum(data["temp"])/len(tl)
-# print(average)
 
-# Using pandas
+print(average)
 print(data["temp"].mean())
+print(data["temp"].max())
+
+print(data["condition"])  # print(data.temp)
+
+
