@@ -44,10 +44,38 @@ average = sum(data["temp"])/len(tl)
 # Creating a dataframe from Scratch
 data_dict = {
     "student": ["Amy","Ashu","Anshika"],
-    "scores": [76, 34, 89]
+    "scores": [76, 34, 89],
 }
 
-data1 = pandas.DataFrame(data_dict)
+# data1 = pandas.DataFrame(data_dict)
 # print(data1)
-print(type(data1))      # pandas.core.frame.DataFrame
-print(type(data_dict))  # dict
+# print(type(data1))      # pandas.core.frame.DataFrame
+# print(type(data_dict))  # dict
+
+# data1.to_csv("student_data.csv")
+
+squireel_data = pandas.read_csv("Squirrel_Census.csv")
+gray_squireels = squireel_data[squireel_data["Primary Fur Color"] == "Gray"]
+gray_squireels_count = len(squireel_data[squireel_data["Primary Fur Color"] == "Gray"])
+
+Cinnamon_squireels = squireel_data[squireel_data["Primary Fur Color"] == "Cinnamon"]
+Cinnamon_squireels_count = len(squireel_data[squireel_data["Primary Fur Color"] == "Cinnamon"])
+
+Black_squireels = squireel_data[squireel_data["Primary Fur Color"] == "Black"]
+Black_squireels_count = len(squireel_data[squireel_data["Primary Fur Color"] == "Black"])
+
+print(list(set(squireel_data["Primary Fur Color"])))
+
+print(gray_squireels_count)
+print(Cinnamon_squireels_count)
+print(Black_squireels_count)
+
+# print(squireel_data["Primary Fur Color"])
+# print(squireel_data)
+
+data_dict = {
+    "Fun Color": ["Gray", "Black","Cinnamon"],
+    "Count": [gray_squireels_count, Black_squireels_count, Cinnamon_squireels_count]
+}
+
+# pandas.DataFrame(data_dict).to_csv("Squirrel_count.csv")
