@@ -16,13 +16,13 @@ for i in range(len(state_names)):
     answer_state = screen.textinput(title=f"{len(guessed_state_list)}/50 State", prompt="What's another state's name?").title()
 
     if answer_state == "Exit":
-        missing_states = []
-        for i in state_names:
-            if i not in guessed_state_list:
-                missing_states.append(i)
+        missing_states = [n for n in state_names if n not in guessed_state_list]
         new_data_to_learn = pandas.DataFrame(missing_states)
         new_data_to_learn.to_csv("States_to_learn_data4.csv")
         break
+
+    
+
     if answer_state in state_names:
         guessed_state_list.append(answer_state)
         t = turtle.Turtle()
