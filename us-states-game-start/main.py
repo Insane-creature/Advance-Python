@@ -17,6 +17,9 @@ for i in range(len(state_names)):
 
     if answer_state == "Exit":
         missing_states = [n for n in state_names if n not in guessed_state_list]
+        # for i in state_names:
+        #     if i not in guessed_state_list:
+        #         missing_states.append(i)
         new_data_to_learn = pandas.DataFrame(missing_states)
         new_data_to_learn.to_csv("States_to_learn_data4.csv")
         break
