@@ -8,7 +8,9 @@ my_label = tkinter.Label(text="I'm a Label")
 my_label.pack(expand=1)
 
 
-
+import turtle
+tim = turtle.Turtle
+tim.write()
 
 
 window.mainloop()
