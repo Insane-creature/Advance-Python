@@ -11,8 +11,17 @@ WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
+timer_count = None
 
 # ---------------------------- TIMER RESET ------------------------------- # 
+
+def reset_timer():
+    window.after_cancel(timer_count)
+    canvas.config(timer_text, text="00:00")
+    timer.config(text= "Timer")
+    tick.config(text="")
+    global reps
+    reps = 0
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
@@ -32,9 +41,8 @@ def start_timer():
     elif reps % 8 == 0:
         count_down(long_break_sec)
         timer.config(text="Break", fg=GREEN)
-        
-        
-        
+        # tick.config(text="✔")
+
     count_down(5*60)
 
 
@@ -49,9 +57,17 @@ def count_down(count):
 
     canvas.itemconfig(timer_text, text = f"{count_min}:{count_sec}")
     if count > 0:
-        window.after(1000, count_down, count -1)
+        global timer_count
+        timer_count = window.after(1000, count_down, count -1)
     else:
         start_timer()
+        marks = ""
+        for _ in range(math.floor(reps/2)):
+            marks += "✔"
+        tick.config(text=marks)
+
+    
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -72,10 +88,10 @@ canvas.grid(column= 1,row=1)
 start = Button(text="Start", highlightthickness = 0, command=start_timer)
 start.grid(column=0, row=2)
 
-reset = Button(text="Reset", bg=YELLOW, highlightthickness= 0)
+reset = Button(text="Reset", bg=YELLOW, highlightthickness= 0, command=reset_timer)
 reset.grid(column= 2,row= 2)
 
-tick = Label(text="✔", fg=GREEN, bg=YELLOW)
+tick = Label(fg=GREEN, bg=YELLOW)
 tick.grid(column= 1,row= 3)
 
 window.mainloop()
