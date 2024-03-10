@@ -24,6 +24,8 @@ def count_down(count):
     
     count_min = math.floor(count / 60)
     count_sec = count % 60
+    if count_sec < 10:
+        count_sec = f"0{count_sec}"
 
     canvas.itemconfig(timer_text, text = f"{count_min}:{count_sec}")
     if count > 0:
@@ -32,7 +34,6 @@ def count_down(count):
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Pomodoro")
-# window.minsize(width=500, height=400)
 window.config(padx=100, pady=50, bg=YELLOW)
 
 timer = Label(text="Timer", fg = GREEN, font=(FONT_NAME, 50), bg=YELLOW)
