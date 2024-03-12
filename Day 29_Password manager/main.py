@@ -1,7 +1,26 @@
 from tkinter import *
 from tkinter import messagebox
+from random import shuffle, randint, choice
+import pyperclip
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+def generate_password():
 
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+
+    password_letters = [choice(letters) for _ in range(randint(8, 10))]
+    password_numbers = [choice(numbers) for _ in range(randint(2, 4))]
+    password_symbols = [choice(symbols) for _ in range(randint(2, 4))]
+
+    password_list = password_letters + password_numbers + password_symbols
+    shuffle(password_list)
+
+    password5 = "".join(password_list)
+    textbox3.insert(0, password5)
+    pyperclip.copy(password5)
+    
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
@@ -21,7 +40,7 @@ def save():
                 textbox3.delete(0, END)
     else:
         messagebox.showerror(title="Error found", message= "You left some of the fields emplty, please check.")
-
+        
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
@@ -56,7 +75,7 @@ password.grid(column= 0,row=3)
 textbox3 = Entry(width=24)
 textbox3.grid(column=1 ,row=3)
 
-generatepassword = Label(text="Generate Password")
+generatepassword = Button(text="Generate Password", command=generate_password)
 generatepassword.grid(column= 2,row=3)
 
 add = Button(text="Add", width=36, command=save)
