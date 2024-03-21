@@ -5,7 +5,8 @@ parameters = {
     "type": "boolean"
 }
 
-# API Calling
+# API CALLING
+
 response = requests.get(url="https://opentdb.com/api.php", params=parameters)
 response.raise_for_status()
 data = response.json()
