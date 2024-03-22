@@ -36,8 +36,8 @@ average = sum(data["temp"])/len(tl)
 # print(data.temp[data.day == "Monday"])
 # print(data[data.temp == data.temp.max()])
 
-# day_temp = data.temp[0]
-# day_temp = data.temp[data.day == "Monday"]
+day_temp = data.temp[0]
+day_temp = data.temp[data.day == "Monday"]
 # converting_to_fahrenheit = (day_temp * 1.8) + 32
 # print(converting_to_fahrenheit)
 
@@ -66,9 +66,9 @@ Black_squireels_count = len(squireel_data[squireel_data["Primary Fur Color"] == 
 
 print(list(set(squireel_data["Primary Fur Color"])))
 
-print(gray_squireels_count)
-print(Cinnamon_squireels_count)
-print(Black_squireels_count)
+# print(gray_squireels_count)
+# print(Cinnamon_squireels_count)
+# print(Black_squireels_count)
 
 # print(squireel_data["Primary Fur Color"])
 # print(squireel_data)

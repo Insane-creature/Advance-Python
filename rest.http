@@ -1,0 +1,3 @@
+GET https://reqres.in/api/users
+
+OPTIONS  https://reqres.in/api/users
