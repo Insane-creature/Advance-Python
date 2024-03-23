@@ -2,7 +2,7 @@ from tkinter import *
 
 THEME_COLOR = "#375362"
 
-class quizinterface():
+class QuizInterface():
 
     def __init__(self):
         self.window = Tk()
@@ -10,4 +10,3 @@ class quizinterface():
 
         self.window.mainloop()
 
-quizinterface()
