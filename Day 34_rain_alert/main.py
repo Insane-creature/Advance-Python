@@ -7,6 +7,7 @@ parameters = {
     "lat": 23.022505,
     "long": 72.571365,
     "appid": api_keys,
+    "cnt": 4
 }
 
 response = requests.get(OWM_Endpoint, params=parameters)
