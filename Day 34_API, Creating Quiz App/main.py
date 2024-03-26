@@ -10,11 +10,6 @@ for question in question_data:
     new_question = Question(question_text, question_answer)
     question_bank.append(new_question)
 
-# quiz = quizinterface(q)
 
 quiz = QuizBrain(question_bank)
-quiz_ui = QuizInterface()
-
-
-print("You've completed the quiz")
-print(f"Your final score was: {quiz.score}/{quiz.question_number}")
+quiz_ui = QuizInterface(quiz)
