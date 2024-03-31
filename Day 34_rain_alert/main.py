@@ -13,6 +13,7 @@ parameters = {
 response = requests.get(OWM_Endpoint, params=parameters)
 # response.raise_for_status()
 print(response.status_code)
-print(response.json())
+weather_data = response.json()
+print(weather_data)
 # # question_data = data["results"]
 # print(data)
