@@ -1,9 +1,11 @@
 import requests
 
-OWM_Endpoint = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}"
-# OWM_Endpoint = "https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=34cc646d93c72ae9fa0987a90321e0a4"
+API_key = "34cc646d93c72ae9fa0987a90321e0a4"
+lat= 51.507351
+long= -0.127758
 
-api_keys = "34cc646d93c72ae9fa0987a90321e0a4"
+# OWM_Endpoint = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}"
+OWM_Endpoint = f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={long}&appid={API_key}"
 
 parameters = {
     "lat": 51.507351,

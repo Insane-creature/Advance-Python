@@ -12,10 +12,10 @@ OWM_Endpoint = f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon=
 
 # response = requests.get(url)
 response = requests.get(OWM_Endpoint)
-print(response.json())
+# print(response.json())
 
-if response == 200:
-    print("Yes, we hit!")
-else:
-    print("Try again.")
+# if response == 200:
+#     print("Yes, we hit!")
+# else:
+#     print("Try again.")
 
