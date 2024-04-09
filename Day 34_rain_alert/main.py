@@ -19,14 +19,17 @@ parameters = {
 response = requests.get(OWM_Endpoint, params=parameters)
 # response.raise_for_status()
 weather_data = response.json()
-print(weather_data["list"][0]["weather"][0]["id"])
-# print(weather_data["list"][0]["weather"]["id"])
+# print(weather_data["list"][0]["weather"][0]["id"])
+weather_id = weather_data["list"]
+# print(type(weather_id))
+total = len(weather_id)
 
-# will_rain = False
-# for hour_data in weather_data["list"]:
-#     condition_data = hour_data["weather"][0]["id"]
-#     if int(condition_data) < 700:
-#         will_rain = True
+will_rain = False
+for hour_data in range(total):
+    
+    condition = weather_id[hour_data]["weather"][0]["id"]
+    if int(condition) < 700:
+        will_rain = True
 
-# if will_rain:
-#     print("Bring an umbrella.")
+if will_rain:
+    print("Bring an umbrella.")
