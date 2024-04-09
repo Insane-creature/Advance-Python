@@ -1,8 +1,17 @@
 import requests
+# import os
+from twilio.rest import Client
+
+account_sid = "ACef3fb8133fd356c9dc20e57abea2a19d"
+auth_token = "b24bbea1a86fc67729f4ac979ab450fd"
+
 
 API_key = "34cc646d93c72ae9fa0987a90321e0a4"
-lat= 22.092179
-long= 82.127243
+# lat= 22.092179
+# long= 82.127243
+
+lat = -33.945660
+long = 151.236606
 
 # OWM_Endpoint = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}"
 OWM_Endpoint = f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={long}&appid={API_key}"
@@ -32,4 +41,12 @@ for hour_data in range(total):
         will_rain = True
 
 if will_rain:
-    print("Bring an umbrella.")
+    client = Client(account_sid, auth_token)
+    message = client.messages \
+                .create(
+                     body="It's going to rain, don't forget to carry an umbrella ☔️",
+                     from_='+12564881761',
+                     to='+918103553407'
+                 )
+
+    print(message.sid)
