@@ -5,8 +5,7 @@ from twilio.rest import Client
 account_sid = "account_sid"
 auth_token = "auth_token"
 
-
-API_key = "34cc646d93c72ae9fa0987a90321e0a4"
+API_key = "your_api"
 # lat= 22.092179
 # long= 82.127243
 
