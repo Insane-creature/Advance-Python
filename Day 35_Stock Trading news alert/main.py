@@ -5,3 +5,4 @@ STOCK_START = "https://alphavantage.co/query"
 STOCK_END = "https://newsapi.org/v2/everything"
 
 STOCK_API_KEY = 
+requests.get(STOCK_END)
