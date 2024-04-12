@@ -4,7 +4,9 @@ company_name = "Tesla Inc"
 STOCK_START = "https://alphavantage.co/query"
 STOCK_END = "https://newsapi.org/v2/everything"
 
-STOCK_API_KEY = 
+STOCK_API_KEY = ""
+alphavantage_api = ""
+
 stock_paras = {
     "function": "TIME_SERIES_DAILY"
 }
