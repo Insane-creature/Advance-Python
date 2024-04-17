@@ -15,4 +15,5 @@ stock_paras = {
     "symbol": stock_name,
     "apikey": STOCK_API_KEY
 }
-requests.get(STOCK_ENDPOINT, params)
+response = requests.get(STOCK_ENDPOINT, stock_paras)
+print(response)
