@@ -16,4 +16,4 @@ stock_paras = {
     "apikey": STOCK_API_KEY
 }
 response = requests.get(STOCK_ENDPOINT, stock_paras)
-print(response)
+print(response.json())
