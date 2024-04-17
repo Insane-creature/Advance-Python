@@ -16,4 +16,11 @@ stock_paras = {
     "apikey": STOCK_API_KEY
 }
 response = requests.get(STOCK_ENDPOINT, stock_paras)
-print(response.json())
+# yesterday_data = response.json()["Time Series (Daily)"]["2024-04-16"]["1. open"]
+data = response.json()["Time Series (Daily)"]
+data_list = [value for (key, value) in data.items()]
+yesterday_data = data_list[0]
+yesterday_closing_price = yesterday_data["4. close"]
+print(yesterday_closing_price)
+
+# print(response.json())
