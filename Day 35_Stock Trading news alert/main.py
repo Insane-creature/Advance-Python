@@ -34,7 +34,6 @@ yesterday_closing_price = yesterday_data["4. close"]
 daybefore_yesterday_data = data_list[1]
 daybefore_yesterday_closing_price = daybefore_yesterday_data["4. close"]
 # print(daybefore_yesterday_closing_price)
-# print(response.json())
 
 # Increase/decrease in STOCK price
 difference = float(yesterday_closing_price)-float(daybefore_yesterday_closing_price)
@@ -49,7 +48,7 @@ average = (float(yesterday_closing_price)+float(daybefore_yesterday_closing_pric
 diff_percentage = round(difference/average)*100
 print(diff_percentage)
 
-if abs(diff_percentage) >= 0:    
+if abs(diff_percentage) >= 1:    
     news_paras = {
         "q": stock_name,
         "apiKey": news_api
@@ -57,7 +56,6 @@ if abs(diff_percentage) >= 0:
 
     news_response = requests.get(NEWS_ENDPOINT, news_paras)
     articles = news_response.json()["articles"]
-    # print(articles)
     # data_list = [value for (key, value) in data.items()]
     # print(data_list)
 
