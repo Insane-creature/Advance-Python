@@ -11,10 +11,13 @@ user_params = {
     "agreeTermsOfService": "yes",
     "notMinor": "yes",
 }
-
 response = requests.post(pixela_endpoint, json=user_params)
 print(response.text)
+
+
 
 graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs"
 
 requests.post()
+
+
