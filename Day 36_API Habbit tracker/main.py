@@ -35,7 +35,7 @@ headers = {
  
 pixel_creation_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{graphID}"
 pixel_data = {
-    "data": "20240427",
+    "date": "20240427",
     "quantity": "5.3",
 
 }
