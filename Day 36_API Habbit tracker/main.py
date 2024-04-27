@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 
 USERNAME = "sonianshika"
 TOKEN = "ksdk23asjd345khks3l4"
@@ -34,9 +35,14 @@ headers = {
 # print(response.text)
  
 pixel_creation_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{graphID}"
+
+today = datetime(year=2024, month=4, day=26)
+# formatted_day = today.strftime()
+# print(today.strftime("%Y%m%d"))
+
 pixel_data = {
-    "date": "20240427",
-    "quantity": "5.3",
+    "date": today.strftime("%Y%m%d"),
+    "quantity": "4",
 
 }
 
