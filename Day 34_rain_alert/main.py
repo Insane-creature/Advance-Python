@@ -2,10 +2,10 @@ import requests
 # import os
 from twilio.rest import Client
 
-account_sid = "account_sid"
-auth_token = "auth_token"
+account_sid = "ACef3fb8133fd356c9dc20e57abea2a19d"
+auth_token = "b24bbea1a86fc67729f4ac979ab450fd"
 
-API_key = "your_api"
+API_key = "34cc646d93c72ae9fa0987a90321e0a4"
 # lat= 22.092179
 # long= 82.127243
 
@@ -44,8 +44,8 @@ if will_rain:
     message = client.messages \
                 .create(
                      body="It's going to rain, don't forget to carry an umbrella ☔️",
-                     from_='+12564880000',
-                     to='+918103500000'
+                     from_='+12564881761',
+                     to='+918103553407'
                  )
 
     print(message.sid)

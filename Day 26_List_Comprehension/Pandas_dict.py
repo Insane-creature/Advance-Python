@@ -5,6 +5,7 @@ stud_dict = {
 }
 
 # Looping through dictionary
+# print("This is cur op",stud_dict.items())
 # for (key, value) in stud_dict.items():
 #     print(key, value)
 # OUTPUT
@@ -30,8 +31,9 @@ student_data_frame = pandas.DataFrame(stud_dict)
 
 # LOOPing using pandas
 # for (key, value) in student_data_frame.items():
-    # print(key)        # Items
-    # print(value)
+#     print(key)        # Items
+#     print(value)
+
     # 0      Adam
     # 1    Angela
     # 2     James
@@ -46,7 +48,7 @@ student_data_frame = pandas.DataFrame(stud_dict)
 # for (index, row) in student_data_frame.iterrows():
 #     print(row.Scores)
 
-data = pandas.read_csv("nato_phonetic_alphabet.csv")
+data = pandas.read_csv("Day 26_List_Comprehension/nato_phonetic_alphabet.csv")
 nato_data = {row.letter:row.code for (index, row) in data.iterrows()}
 
 # print(nato_data)
@@ -55,11 +57,13 @@ input_letter = ("anshika").upper()
 
 
 # 1 Way: print(list(input_letter))
-# 2 Way: print([*input_letter])
+# print([*input_letter])
 # 3 Way: print([x for x in input_letter])
+# output: ['A', 'N', 'S', 'H', 'I', 'K', 'A']
 
 characters = [spell for spell in [*input_letter]]
 output = [nato_data[output_char] for output_char in characters]
 # print(output)       # ['Alfa', 'November', 'Sierra', 'Hotel', 'India', 'Kilo', 'Alfa']
+
 
 

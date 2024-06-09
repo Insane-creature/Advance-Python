@@ -1,2 +1,5 @@
 twilio code = 2K9JYKKQGCV8D8E6871NC72E
 twilio phone_number = +12564881761
+
+account_sid = "ACef3fb8133fd356c9dc20e57abea2a19d"
+auth_token = "b24bbea1a86fc67729f4ac979ab450fd"
